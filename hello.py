@@ -7,7 +7,7 @@ def start():
     ran = str(random.randint(1,100))
     f= f"hello{ran}.txt"
     time.sleep(2)
-    py.write(f'touch {f}')
+    py.write(f'mkdir {f}')
     py.press('enter')
     time.sleep(2)
     py.write('git add .')

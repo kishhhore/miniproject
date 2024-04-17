@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Assistance for Visually Impaired</title>
+    <link rel="stylesheet" href="./calc.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Math Assistance for Visually Impaired</h1>
+        <div class="input-group">
+            <label for="mathInput">Enter Math Problem:</label>
+            <input type="text" id="mathInput" aria-label="Enter Math Problem" />
+        </div>
+        <div class="button-group">
+            <button onclick="startSpeechRecognition()" aria-label="Start Listening">Start Listening</button>
+            <button onclick="solveMathProblem()" aria-label="Solve">Solve</button>
+        </div>
+        <div id="result" aria-live="polite" aria-atomic="true" role="status" aria-label="Math Problem Result"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script> <!-- Include math.js library -->
+    <script src="./calc3.js"></script>
+</body>
+
+</html>
+
+
+

@@ -1,5 +1,0 @@
-speak(f"You said: {recognized_text}")
-    sleep(2)
-    result = ai(recognized_text)
-    speak(result)
-    keylogger()

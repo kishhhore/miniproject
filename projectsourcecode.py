@@ -2,7 +2,7 @@ from pynput import keyboard
 import pyttsx3
 import speech_recognition as sr
 from ai21 import AI21Client
-
+from time import sleep
 client = AI21Client(api_key="4eT4o4XUrYxW3mJAoNkriN8ybuDpHZXK")
 key_buffer = []
 tts_engine = pyttsx3.init()
@@ -17,8 +17,14 @@ class Action:
         self.speak("Hello, how can I help you?")
         recognized_text = self.listen_to_speech()
         if recognized_text:
+            print(f"You said : {recognized_text}")
             self.speak(f"You said: {recognized_text}")
             response = self.generate_response(recognized_text)
+            print(response)
+            self.speak(response)
+            sleep(3)
+            print("\n Repeating Response Again ...")
+            self.speak("Repeating Response Again ...")
             self.speak(response)
         self.is_listening = False
 
@@ -79,7 +85,7 @@ class Action:
                 print("Recognizing...")
                 self.speak("Recognizing..")
                 text = recognizer.recognize_google(audio)
-                print(f"Recognized text: {text}")
+                # print(f"Recognized text: {text}")
                 return text
             except sr.UnknownValueError:
                 print("Sorry, I did not understand that.")
@@ -88,7 +94,7 @@ class Action:
                 print("Could not request results; check your network connection.")
                 return ""
 
-if _name_ == "_main_":                 
-    while True:
-        action = Action()
-        action.start_listening()
+              
+while True:
+    action = Action()
+    action.start_listening()
